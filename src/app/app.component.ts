@@ -1,18 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
-
+import { Component, ViewChild } from "@angular/core";
+import { Nav, Platform } from "ionic-angular";
+import { StatusBar, Splashscreen } from "ionic-native";
+import {ChaosMagePage} from "../pages/chaos-mage/chaos-mage";
+import {InitiativeTrackerPage} from "../pages/initiative-tracker/initiative-tracker";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
-export class MyApp {
+export class App {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = ChaosMagePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -21,8 +19,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 }
+      { title: "Page One", component: ChaosMagePage },
+      { title: "Page Two", component: InitiativeTrackerPage }
     ];
 
   }
@@ -38,7 +36,7 @@ export class MyApp {
 
   openPage(page) {
     // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
+    // we wouldn"t want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
 }
