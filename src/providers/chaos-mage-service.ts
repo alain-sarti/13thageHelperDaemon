@@ -4,9 +4,27 @@ import {SpellType, Type} from "../models/spell-type-model";
 
 @Injectable()
 export class ChaosMageService {
-  private spellTypes: Array<SpellType>;
+  public spellTypes: Array<SpellType>;
 
   constructor() {
+    this.initializeSpelltypes();
+  }
+
+  public nextSpellType(): SpellType {
+    if(this.spellTypes.length >= 1) {
+      let rand = Math.floor(Math.random() * this.spellTypes.length);
+      let type = this.spellTypes[rand];
+      this.spellTypes.splice(rand, 1);
+
+      if(this.spellTypes.length <= 1) {
+        this.initializeSpelltypes();
+      }
+
+      return type;
+    }
+  }
+
+  public initializeSpelltypes() {
     this.spellTypes = [];
     this.spellTypes.push(<SpellType>{type: Type.Attack, warp: false});
     this.spellTypes.push(<SpellType>{type: Type.Attack, warp: false});
@@ -14,10 +32,5 @@ export class ChaosMageService {
     this.spellTypes.push(<SpellType>{type: Type.Defense, warp: false});
     this.spellTypes.push(<SpellType>{type: Type.Iconic, warp: false});
     this.spellTypes.push(<SpellType>{type: Type.Iconic, warp: false});
-  }
-
-  public nextSpellType(): SpellType {
-    let rand = Math.floor(Math.random() * 6) + 1;
-    return this.spellTypes[rand];
   }
 }
