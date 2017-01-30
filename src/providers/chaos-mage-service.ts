@@ -11,20 +11,18 @@ export class ChaosMageService {
   }
 
   public nextSpellType(): SpellType {
-    if(this.spellTypes.length >= 1) {
-      let rand = Math.floor(Math.random() * this.spellTypes.length);
-      let type = this.spellTypes[rand];
-      this.spellTypes.splice(rand, 1);
+    let rand = Math.floor(Math.random() * this.spellTypes.length);
+    let type = this.spellTypes[rand];
+    this.spellTypes.splice(rand, 1);
 
-      if(this.spellTypes.length <= 1) {
-        this.initializeSpelltypes();
-      }
-
-      return type;
+    if(this.spellTypes.length <= 1) {
+      this.initializeSpelltypes();
     }
+
+    return type;
   }
 
-  public initializeSpelltypes() {
+  public initializeSpelltypes(): void {
     this.spellTypes = [];
     this.spellTypes.push(<SpellType>{type: Type.Attack, warp: false});
     this.spellTypes.push(<SpellType>{type: Type.Attack, warp: false});

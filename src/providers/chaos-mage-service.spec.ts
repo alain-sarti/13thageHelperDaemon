@@ -36,4 +36,8 @@ describe("ChaosMageService", () => {
     expect(service.initializeSpelltypes).toHaveBeenCalled();
     expect(service.spellTypes.length).toEqual(6);
   });
+
+  it("shows spells for spelltype", () => {
+
+  });
 });
