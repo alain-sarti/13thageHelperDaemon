@@ -1,4 +1,14 @@
 /* tslint:disable */
+// APP:
+import {SpellService} from "./providers/spell-service";
+import {fakeCMSpells} from "./providers/spell-service.spec";
+
+export class SpellServiceMock extends SpellService {
+  public initialiseCMSpells() {
+    this.cmSpells = fakeCMSpells();
+  }
+}
+
 // IONIC:
 
 export class ConfigMock {

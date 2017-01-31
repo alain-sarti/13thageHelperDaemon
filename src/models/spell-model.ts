@@ -1,4 +1,6 @@
+import {Type} from "./spell-type-model";
 export interface Spell {
+  spellType: Type,
   name: string,
   range: string,
   type: string,

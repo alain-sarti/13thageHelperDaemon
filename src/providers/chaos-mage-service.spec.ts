@@ -1,10 +1,12 @@
 import {ChaosMageService} from "./chaos-mage-service";
+import {SpellServiceMock} from "../mocks";
+import {Type} from "../models/spell-type-model";
 
 let service: ChaosMageService = null;
 
 describe("ChaosMageService", () => {
   beforeEach(() => {
-    service = new ChaosMageService();
+    service = new ChaosMageService(new SpellServiceMock());
   });
 
   it("initializes", () => {
@@ -27,7 +29,7 @@ describe("ChaosMageService", () => {
   });
 
   it("resets the list of spelltypes if only 1 spelltype is left", () => {
-    spyOn(service, "initializeSpelltypes");
+    spyOn(service, "initializeSpelltypes").and.callThrough();
     service.nextSpellType();
     service.nextSpellType();
     service.nextSpellType();
@@ -37,7 +39,24 @@ describe("ChaosMageService", () => {
     expect(service.spellTypes.length).toEqual(6);
   });
 
-  it("shows spells for spelltype", () => {
+  it("shows spells for spelltype attack", () => {
+    let spells = service.showSpells(Type.Attack);
+    spells.forEach((spell) => {
+      expect(spell.spellType).toEqual(Type.Attack);
+    });
+  });
 
+  it("shows spells for spelltype defense", () => {
+    let spells = service.showSpells(Type.Defense);
+    spells.forEach((spell) => {
+      expect(spell.spellType).toEqual(Type.Defense);
+    });
+  });
+
+  it("shows spells for spelltype iconic", () => {
+    let spells = service.showSpells(Type.Iconic);
+    spells.forEach((spell) => {
+      expect(spell.spellType).toEqual(Type.Iconic);
+    });
   });
 });
