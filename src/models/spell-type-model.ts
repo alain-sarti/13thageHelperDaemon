@@ -4,7 +4,7 @@ export interface SpellType {
 }
 
 export enum Type {
-  Attack,
-  Defense,
-  Iconic
+  CMAttack,
+  CMDefense,
+  CMIconic
 }

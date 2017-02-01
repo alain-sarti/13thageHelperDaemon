@@ -1,0 +1,14 @@
+{
+  "spellType": "0",
+  "title": "Force Tentacle",
+  "range": "Ranged spell",
+  "type": "At-Will",
+  "target": "One random nearby enemy",
+  "attack": "Charisma + Level vs. PD",
+  "hit": "1d10 + Charisma force damage.",
+  "miss": "Damage equal to your level.",
+  "damage": "3rd level spell: 3d10 damage.\n5th level spell: 5d10 damage.\n7th level spell: 7d10 damage.\n9th level spell: 9d10 damage.",
+  "adventurerFeat": "You can now also target far away enemies.",
+  "championFeat": "This spell’s damage dice increase by one size to d12s.",
+  "epicFeat": "One battle per day, you can deal half damage on a natural even miss with this spell."
+}

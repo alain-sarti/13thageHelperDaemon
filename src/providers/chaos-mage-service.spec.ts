@@ -40,23 +40,28 @@ describe("ChaosMageService", () => {
   });
 
   it("shows spells for spelltype attack", () => {
-    let spells = service.showSpells(Type.Attack);
+    let spells = service.showSpells(Type.CMAttack);
     spells.forEach((spell) => {
-      expect(spell.spellType).toEqual(Type.Attack);
+      expect(spell.spellType).toEqual(Type.CMAttack);
     });
   });
 
   it("shows spells for spelltype defense", () => {
-    let spells = service.showSpells(Type.Defense);
+    let spells = service.showSpells(Type.CMDefense);
     spells.forEach((spell) => {
-      expect(spell.spellType).toEqual(Type.Defense);
+      expect(spell.spellType).toEqual(Type.CMDefense);
     });
   });
 
   it("shows spells for spelltype iconic", () => {
-    let spells = service.showSpells(Type.Iconic);
+    let spells = service.showSpells(Type.CMIconic);
     spells.forEach((spell) => {
-      expect(spell.spellType).toEqual(Type.Iconic);
+      expect(spell.spellType).toEqual(Type.CMIconic);
     });
+  });
+
+  it("rolls for warp effect, if spelltype talent is chosen", () => {
+    let warpEffect: string = service.rollWarpEffect(Type.CMAttack);
+    expect(warpEffect).toBeTruthy();
   });
 });

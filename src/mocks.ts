@@ -2,6 +2,8 @@
 // APP:
 import {SpellService} from "./providers/spell-service";
 import {fakeCMSpells} from "./providers/spell-service.spec";
+import {Request, RequestOptionsArgs, Response} from "@angular/http";
+import {Observable} from "rxjs";
 
 export class SpellServiceMock extends SpellService {
   public initialiseCMSpells() {
@@ -96,6 +98,38 @@ export class MenuMock {
     return new Promise((resolve: Function) => {
       resolve();
     });
+  }
+}
+
+export class HttpMock {
+  _backend() {}
+  _defaultOptions() {}
+  constructor() {
+
+  }
+  request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  get(url: string, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  patch(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  head(url: string, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
+  }
+  options(url: string, options?: RequestOptionsArgs): Observable<Response> {
+    return new Observable<Response>();
   }
 }
 
