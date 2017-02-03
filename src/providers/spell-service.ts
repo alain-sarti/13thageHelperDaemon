@@ -24,10 +24,11 @@ export class SpellService {
   }
 
   public initialiseCMSpells() {
+    console.log("initialise CM Spells");
     this.cmSpells = [];
-    this.http.get("assets/json/spells/chaos-mage.json").map((res) => {
+    this.http.get("assets/json/spells/chaos-mage.json").subscribe((res) => {
       let json = res.json();
-      console.log(json);
+      this.cmSpells = <Array<Spell>>json.spells;
     });
   }
 }

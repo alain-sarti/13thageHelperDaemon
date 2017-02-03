@@ -1,12 +1,12 @@
 import {ChaosMageService} from "./chaos-mage-service";
-import {SpellServiceMock} from "../mocks";
+import {SpellServiceMock, HttpMock} from "../mocks";
 import {Type} from "../models/spell-type-model";
 
 let service: ChaosMageService = null;
 
 describe("ChaosMageService", () => {
   beforeEach(() => {
-    service = new ChaosMageService(new SpellServiceMock());
+    service = new ChaosMageService(new SpellServiceMock((<any>new HttpMock())));
   });
 
   it("initializes", () => {
