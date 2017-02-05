@@ -11,6 +11,21 @@ export class SpellServiceMock extends SpellService {
   }
 }
 
+export class DataServiceMock {
+  private value: any = null;
+  constructor(value: any) {
+    this.value = value;
+  }
+
+  public load(prop: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve({prop: prop, value: this.value});
+    });
+  }
+
+  public save(prop: string, value: any): void {}
+}
+
 // IONIC:
 
 export class ConfigMock {

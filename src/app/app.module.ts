@@ -5,6 +5,7 @@ import {ChaosMagePage} from "../pages/chaos-mage/chaos-mage";
 import {InitiativeTrackerPage} from "../pages/initiative-tracker/initiative-tracker";
 import {ChaosMageService} from "../providers/chaos-mage-service";
 import {SpellService} from "../providers/spell-service";
+import {DataService} from "../providers/data-service";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,11 @@ import {SpellService} from "../providers/spell-service";
     ChaosMagePage,
     InitiativeTrackerPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ChaosMageService, SpellService]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ChaosMageService,
+    SpellService,
+    DataService
+  ]
 })
 export class AppModule {}
