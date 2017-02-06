@@ -6,12 +6,14 @@ import {InitiativeTrackerPage} from "../pages/initiative-tracker/initiative-trac
 import {ChaosMageService} from "../providers/chaos-mage-service";
 import {SpellService} from "../providers/spell-service";
 import {DataService} from "../providers/data-service";
+import {SpellPage} from "../pages/spell/spell";
 
 @NgModule({
   declarations: [
     App,
     ChaosMagePage,
-    InitiativeTrackerPage
+    InitiativeTrackerPage,
+    SpellPage
   ],
   imports: [
     IonicModule.forRoot(App)
@@ -20,7 +22,8 @@ import {DataService} from "../providers/data-service";
   entryComponents: [
     App,
     ChaosMagePage,
-    InitiativeTrackerPage
+    InitiativeTrackerPage,
+    SpellPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

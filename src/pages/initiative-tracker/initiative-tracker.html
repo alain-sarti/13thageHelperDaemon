@@ -1,11 +1,19 @@
-<ion-navbar>
-  <button ion-button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>Page One</ion-title>
-</ion-navbar>
-
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ini</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
-
+  <button ion-button (click)="showDialog(PLAYERS)">Add players slot</button>
+  <button ion-button (click)="showDialog(MASTER)">Add master slot</button>
+  <ion-list>
+    <ion-item *ngFor="let segment of segments">
+      {{segment.slot}} <ion-icon name="{{icon(segment.type)}}"></ion-icon> {{segment.player}}
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="reset()">Reset</button>
 </ion-content>

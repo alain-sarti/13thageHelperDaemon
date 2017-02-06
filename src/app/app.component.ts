@@ -19,8 +19,8 @@ export class App {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: "Page One", component: ChaosMagePage },
-      { title: "Page Two", component: InitiativeTrackerPage }
+      { title: "CM", component: ChaosMagePage },
+      { title: "Ini", component: InitiativeTrackerPage }
     ];
 
   }

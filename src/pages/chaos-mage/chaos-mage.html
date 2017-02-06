@@ -1,12 +1,18 @@
-<ion-navbar>
-  <button ion-button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>Page One</ion-title>
-</ion-navbar>
-
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CM</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="nextSpellType()">Click</button>
-  {{counter}}
+  <button ion-button (click)="nextSpellType()">Get next spelltype</button> <br/>
+  {{type}}
+  <ion-list>
+    <ion-item *ngFor="let spell of spells">
+      <page-spell spell="spell"></page-spell>
+    </ion-item>
+  </ion-list>
 </ion-content>
