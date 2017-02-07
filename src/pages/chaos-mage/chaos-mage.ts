@@ -29,6 +29,7 @@ export class ChaosMagePage {
         this.type = "Iconic";
         break;
     }
+    //TODO: Add grouping to list
     this.spells = this.service.showSpells(type.type);
   }
 

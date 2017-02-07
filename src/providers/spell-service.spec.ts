@@ -25,7 +25,7 @@ describe("SpellService", () => {
           "spells": [
             {
               "spellType": "0",
-              "title": "Force Tentacle",
+              "name": "Force Tentacle",
               "range": "Ranged spell",
               "type": "At-Will",
               "target": "One random nearby enemy",
@@ -39,7 +39,7 @@ describe("SpellService", () => {
             },
             {
               "spellType": "0",
-              "title": "Chaos Ray",
+              "name": "Chaos Ray",
               "range": "Ranged spell",
               "type": "Once per battle",
               "target": "One nearby or far away enemy",

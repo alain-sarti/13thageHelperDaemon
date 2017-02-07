@@ -2,21 +2,21 @@
   "spells": [
     {
       "spellType": "0",
-      "title": "Force Tentacle",
+      "name": "Force Tentacle",
       "range": "Ranged spell",
       "type": "At-Will",
       "target": "One random nearby enemy",
       "attack": "Charisma + Level vs. PD",
       "hit": "1d10 + Charisma force damage.",
       "miss": "Damage equal to your level.",
-      "damage": "3rd level spell: 3d10 damage.\n5th level spell: 5d10 damage.\n7th level spell: 7d10 damage.\n9th level spell: 9d10 damage.",
+      "damage": "3rd level spell: 3d10 damage.<br>5th level spell: 5d10 damage.<br>7th level spell: 7d10 damage.<br>9th level spell: 9d10 damage.",
       "adventurerFeat": "You can now also target far away enemies.",
       "championFeat": "This spell’s damage dice increase by one size to d12s.",
       "epicFeat": "One battle per day, you can deal half damage on a natural even miss with this spell."
     },
     {
       "spellType": "0",
-      "title": "Chaos Ray",
+      "name": "Chaos Ray",
       "range": "Ranged spell",
       "type": "Once per battle",
       "target": "One nearby or far away enemy",
@@ -24,7 +24,39 @@
       "hit": "1d8 + Charisma damage.",
       "evenHit": "As a hit, plus another nearby enemy takes half damage.",
       "miss": "1d6 damage to a different nearby enemy.",
-      "damage": "3rd level spell 4d6 damage: 1d10 damage on a miss.\n5th level spell 6d6 damage: 2d12 damage on a miss.\n7th level spell 6d10 damage: 3d12 damage on a miss.\n9th level spell 8d10 damage: 5d12 damage on a miss."
+      "damage": "3rd level spell 4d6 damage: 1d10 damage on a miss.<br>5th level spell 6d6 damage: 2d12 damage on a miss.<br>7th level spell 6d10 damage: 3d12 damage on a miss.<br>9th level spell 8d10 damage: 5d12 damage on a miss."
+    },
+    {
+      "spellType": "0",
+      "name": "Blarrrrgh!",
+      "range": "Ranged spell",
+      "type": "Daily",
+      "target": "1d6 nearby enemies",
+      "attack": "Charisma + Level vs. PD",
+      "hit": "3d6 + Charisma damage, and roll a d4 for the effect (same damage for all targets but a separate effect for each one).<br>d4	Effect<br>1 The target is dazed (save ends).<br>2 The target is weakened (save ends).<br>3 The target is hampered until the end of your next turn.<br>4 The target is confused until the end of your next turn.",
+      "miss": "Damage equal to your level.",
+      "damage": "3rd level spell: 6d6 damage.<br>5th level spell: 6d10 damage.<br>7th level spell: 10d10 damage.<br>9th level spell: 2d8 x 10 damage."
+    },
+    {
+      "spellType": "1",
+      "name": "Chaos Blessing",
+      "range": "Close-quarters spell",
+      "type": "At-Will",
+      "effect": "Effect: Roll a d20 to determine which effect the blessing grants. Higher-level versions of the spell improve the first three blessings, but you still get only the blessing you roll.<br>d20	Effect<br>1–4 Gift—You or one of your nearby allies gains 7 temporary hit points.<br>5–8 Resilience—You gain 7 temporary hit points.<br>9–12 Aura/tentacles—The next enemy that moves to engage you this battle takes 2d6 damage.<br>13–16 Defense bonus—You gain a +2 bonus to the defense of your choice (AC, PD, or MD) until an attack against that defense misses you or until the end of the battle.<br>17–20 Healing—You or your nearby ally with the fewest hit points can heal using a recovery. (If you’re the one with the fewest hit points among you and your nearby allies, it’s you.)<br>3rd level spell: gift and resilience now grant 12 temporary hit points; aura/tentacles damage is 2d10.<br>5th level spell: gift and resilience now grant 20 temporary hit points; aura/tentacles damage is 4d10.<br>7th level spell: gift and resilience now grant 35 temporary hit points; aura/tentacles damage is 6d8.<br>9th level spell: gift and resilience now grant 60 temporary hit points; aura/tentacles damage is 10d8.",
+      "adventurerFeat": "The defense bonus effect now applies to all the target’s defenses (and therefore ends as soon as the target is missed by an attack).",
+      "championFeat": "A number of times per day equal to your highest non-Charisma modifier, you can roll twice when you cast chaos blessing and gain both effects (reroll a duplicate result).",
+      "epicFeat": "The damage dice for the aura/tentacles effect increase by one size (for example, d8s to d10s)."
+    },
+    {
+      "spellType": "1",
+      "name": "",
+      "range": "",
+      "type": "",
+      "target": "",
+      "attack": "",
+      "hit": "",
+      "miss": "",
+      "damage": ""
     }
   ]
 }
