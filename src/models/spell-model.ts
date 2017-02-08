@@ -16,5 +16,7 @@ export interface Spell {
   evenHit?: string,
   oddHit?: string,
   evenMiss?: string,
-  oddMiss?: string
+  oddMiss?: string,
+  group?: string,
+  special?: string
 }

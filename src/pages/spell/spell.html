@@ -1,15 +1,17 @@
 <h1>{{spell.name}}</h1>
 <div>{{spell.range}}</div>
 <div>{{spell.type}}</div>
-<div><b>Target:</b> {{spell.target}}</div>
-<div><b>Attack:</b> {{spell.attack}}</div>
-<div><b>Hit:</b> {{spell.hit}}</div>
+<div *ngIf="spell.special"><b>Special:</b> <span [innerHTML]="spell.special"></span></div>
+<div *ngIf="spell.target"><b>Target:</b> {{spell.target}}</div>
+<div *ngIf="spell.attack"><b>Attack:</b> {{spell.attack}}</div>
+<div *ngIf="spell.hit"><b>Hit:</b> <span [innerHTML]="spell.hit"></span></div>
 <div *ngIf="spell.evenHit"><b>Natural Even Hit:</b> {{spell.evenHit}}</div>
 <div *ngIf="spell.oddHit"><b>Natural Odd Hit:</b> {{spell.oddHit}}</div>
-<div><b>Damage:</b> <span [innerHTML]="spell.damage"></span></div>
+<div *ngIf="spell.damage"><b>Damage:</b> <span [innerHTML]="spell.damage"></span></div>
 <div *ngIf="spell.miss"><b>Miss:</b> {{spell.miss}}</div>
 <div *ngIf="spell.evenMiss"><b>Natural Even Miss:</b> {{spell.evenMiss}}</div>
 <div *ngIf="spell.oddMiss"><b>Natural Odd Miss:</b> {{spell.oddMiss}}</div>
+<div *ngIf="spell.effect"><b>Effect: </b> <span [innerHTML]="spell.effect"></span></div>
 <div *ngIf="spell.adventurerFeat"><b>Adventurer Feat:</b> {{spell.adventurerFeat}}</div>
 <div *ngIf="spell.championFeat"><b>Champion Feat:</b> {{spell.championFeat}}</div>
 <div *ngIf="spell.epicFeat"><b>Epic Feat:</b> {{spell.epicFeat}}</div>
