@@ -50,15 +50,18 @@ export class ChaosMageService {
 
   public initializeSpelltypes(): void {
     this.spellTypes = [];
-    this.spellTypes.push(<SpellType>{type: Type.CMAttack, warp: false});
-    this.spellTypes.push(<SpellType>{type: Type.CMAttack, warp: false});
+    this.spellTypes.push(<SpellType>{type: Type.CMAttack, warp: true});
+    this.spellTypes.push(<SpellType>{type: Type.CMAttack, warp: true});
     this.spellTypes.push(<SpellType>{type: Type.CMDefense, warp: false});
     this.spellTypes.push(<SpellType>{type: Type.CMDefense, warp: false});
-    this.spellTypes.push(<SpellType>{type: Type.CMIconic, warp: false});
-    this.spellTypes.push(<SpellType>{type: Type.CMIconic, warp: false});
+    this.spellTypes.push(<SpellType>{type: Type.CMIconic, warp: true});
+    this.spellTypes.push(<SpellType>{type: Type.CMIconic, warp: true});
   }
 
   public showSpells(type: Type): Array<Spell> {
+    if(type == Type.CMIconic) {
+      return this.spells.listCMSpellsForIconicType();
+    }
     return this.spells.listCMSpellsByType(type);
   }
 

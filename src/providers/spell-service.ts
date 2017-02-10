@@ -23,6 +23,25 @@ export class SpellService {
     return spells;
   }
 
+  public listCMSpellsForIconicType(): Array<Spell> {
+    let spells: Array<Spell> = [];
+    let rand: number = Math.floor(Math.random() * 3);
+    let group: string = "";
+    if (rand == 0) {
+      group = "Blood of Warriors";
+    } else if (rand == 1) {
+      group = "Light of the High Ones";
+    } else if (rand == 2) {
+      group = "Twisted Path";
+    }
+    this.cmSpells.forEach((spell) => {
+      if (spell.spellType == Type.CMIconic && spell.group == group) {
+        spells.push(spell);
+      }
+    });
+    return spells;
+  }
+
   public initialiseCMSpells() {
     console.log("initialise CM Spells");
     this.cmSpells = [];

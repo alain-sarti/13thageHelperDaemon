@@ -10,6 +10,7 @@ import {Spell} from "../../models/spell-model";
 export class ChaosMagePage {
   public type: string;
   public spells: Array<Spell> = [];
+  public warpEffect: string;
 
   constructor(public service: ChaosMageService) {}
 
@@ -21,12 +22,18 @@ export class ChaosMagePage {
     switch (type.type) {
       case Type.CMAttack:
         this.type = "Attack";
+        //TODO: connect to character
+        this.warpEffect = this.service.rollWarpEffect(type.type);
         break;
       case Type.CMDefense:
         this.type = "Defense";
+        //TODO: connect to character
+        this.warpEffect = "";
         break;
       case Type.CMIconic:
         this.type = "Iconic";
+        //TODO: connect to character
+        this.warpEffect = this.service.rollWarpEffect(type.type);
         break;
     }
     //TODO: Add grouping to list
