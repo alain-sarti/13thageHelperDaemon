@@ -15,7 +15,28 @@ export class CharacterService {
     });
   }
 
-  public saveCharacter(name: string, character: Character) {
+  public saveCharacter(name: string, character: Character): void {
     this.data.save(name, character);
+  }
+
+  takeDamage(character: Character, damage: number): void {
+    if (!character.hitPoints) {
+      character.hitPoints = character.maxHitPoints;
+    }
+    character.hitPoints -= damage;
+  }
+
+  isCharacterUnconscious(character: Character): boolean {
+    return character.hitPoints <= 0;
+  }
+
+  deathSave(character: Character, savingThrow: number): void {
+    if (savingThrow <= 15) {
+      character.failedDeathSaves++;
+    } else if (savingThrow > 15 && savingThrow < 20) {
+      // recovery
+    } else {
+      // recovery + action
+    }
   }
 }
