@@ -20,7 +20,7 @@ export class CharacterService {
   }
 
   takeDamage(character: Character, damage: number): void {
-    if (!character.hitPoints) {
+    if (character.hitPoints == null) {
       character.hitPoints = character.maxHitPoints;
     }
     character.hitPoints -= damage;
@@ -37,6 +37,31 @@ export class CharacterService {
       // recovery
     } else {
       // recovery + action
+    }
+  }
+
+  recovery(character: Character, amount: number = 1) {
+    if (character.recoveriesSpend == null) {
+      character.recoveriesSpend = 0;
+    }
+    if (character.recoveriesSpend + amount <= character.level) {
+      character.recoveriesSpend += amount;
+      for(let x = 1; x <= amount; x++) {
+        this.heal(character, Math.floor(Math.random() * character.hitDie));
+      }
+    } else {
+      for(let x = 1; x <= character.level; x++) {
+        character.recoveriesSpend++;
+        this.heal(character, Math.floor(Math.random() * character.hitDie));
+      }
+    }
+  }
+
+  heal(character: Character, heal: number): void {
+    if (character.hitPoints == null) {
+      character.hitPoints = character.maxHitPoints;
+    } else {
+      character.hitPoints = Math.min(character.hitPoints + heal, character.maxHitPoints);
     }
   }
 }

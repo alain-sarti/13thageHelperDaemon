@@ -8,6 +8,9 @@ export interface Character {
   talents: Array<Talent>,
   feats: Array<Feat>,
   maxHitPoints: number,
+  hitDie: number,
   failedDeathSaves: number,
-  hitPoints?: number
+  recoveriesSpend: number,
+  hitPoints?: number,
+  temporaryHitPoints?: number
 }
