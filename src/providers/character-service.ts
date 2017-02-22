@@ -34,9 +34,10 @@ export class CharacterService {
     if (savingThrow <= 15) {
       character.failedDeathSaves++;
     } else if (savingThrow > 15 && savingThrow < 20) {
-      // recovery
+      this.recovery(character);
     } else {
-      // recovery + action
+      this.recovery(character);
+      // + action?
     }
   }
 
@@ -47,12 +48,12 @@ export class CharacterService {
     if (character.recoveriesSpend + amount <= character.level) {
       character.recoveriesSpend += amount;
       for(let x = 1; x <= amount; x++) {
-        this.heal(character, Math.floor(Math.random() * character.hitDie));
+        this.heal(character, Math.floor(Math.random() * character.hitDie) + 1);
       }
     } else {
       for(let x = 1; x <= character.level; x++) {
         character.recoveriesSpend++;
-        this.heal(character, Math.floor(Math.random() * character.hitDie));
+        this.heal(character, Math.floor(Math.random() * character.hitDie) + 1);
       }
     }
   }

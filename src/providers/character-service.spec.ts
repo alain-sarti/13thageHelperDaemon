@@ -86,6 +86,18 @@ describe("CharacterService", () => {
       expect(character.failedDeathSaves).toEqual(1);
     });
 
+    it("doesn't increase failed death saves on a successful death save", () => {
+      service.deathSave(character, 17);
+      expect(character.failedDeathSaves).toEqual(0);
+    });
+
+    it("recovers hp on successful death save", () => {
+      service.takeDamage(character, 1);
+      service.deathSave(character, 18);
+      expect(character.failedDeathSaves).toEqual(0);
+      expect(character.hitPoints).toEqual(character.maxHitPoints);
+    });
+
     it("let's the character take a standard recovery if applicable", () => {
       // to heal, a character has to take damage first
       service.takeDamage(character, 6);
