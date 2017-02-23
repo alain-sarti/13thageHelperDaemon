@@ -3,6 +3,8 @@ import { Nav, Platform } from "ionic-angular";
 import { StatusBar, Splashscreen } from "ionic-native";
 import {ChaosMagePage} from "../pages/chaos-mage/chaos-mage";
 import {InitiativeTrackerPage} from "../pages/initiative-tracker/initiative-tracker";
+import {HitPointsCounterPage} from "../pages/hit-points-counter/hit-points-counter";
+import {CharacterManagerPage} from "../pages/character-manager/character-manager";
 
 @Component({
   templateUrl: "app.html"
@@ -20,7 +22,9 @@ export class App {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: "CM", component: ChaosMagePage },
-      { title: "Ini", component: InitiativeTrackerPage }
+      { title: "Ini", component: InitiativeTrackerPage },
+      { title: "Hit Points", component: HitPointsCounterPage },
+      { title: "Character Manager", component: CharacterManagerPage }
     ];
 
   }

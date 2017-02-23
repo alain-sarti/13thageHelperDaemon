@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {DataService} from "./data-service";
 import {Character} from "../models/character-model";
@@ -47,11 +47,11 @@ export class CharacterService {
     }
     if (character.recoveriesSpend + amount <= character.level) {
       character.recoveriesSpend += amount;
-      for(let x = 1; x <= amount; x++) {
+      for (let x = 1; x <= amount; x++) {
         this.heal(character, Math.floor(Math.random() * character.hitDie) + 1);
       }
     } else {
-      for(let x = 1; x <= character.level; x++) {
+      for (let x = 1; x <= character.level; x++) {
         character.recoveriesSpend++;
         this.heal(character, Math.floor(Math.random() * character.hitDie) + 1);
       }
@@ -63,6 +63,24 @@ export class CharacterService {
       character.hitPoints = character.maxHitPoints;
     } else {
       character.hitPoints = Math.min(character.hitPoints + heal, character.maxHitPoints);
+    }
+  }
+
+  createCharacter(name: string,
+                  characterClass: string,
+                  level: number,
+                  hitPoints: number,
+                  hitDie: number): Character {
+    return <Character>{
+      name: name,
+      characterClass: characterClass,
+      level: level,
+      maxHitPoints: hitPoints,
+      hitDie: hitDie,
+      talents: [],
+      feats: [],
+      failedDeathSaves: 0,
+      recoveriesSpend: 0
     }
   }
 }

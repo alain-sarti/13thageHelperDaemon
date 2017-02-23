@@ -7,13 +7,17 @@ import {ChaosMageService} from "../providers/chaos-mage-service";
 import {SpellService} from "../providers/spell-service";
 import {DataService} from "../providers/data-service";
 import {SpellPage} from "../pages/spell/spell";
+import {HitPointsCounterPage} from "../pages/hit-points-counter/hit-points-counter";
+import {CharacterManagerPage} from "../pages/character-manager/character-manager";
 
 @NgModule({
   declarations: [
     App,
     ChaosMagePage,
     InitiativeTrackerPage,
-    SpellPage
+    SpellPage,
+    HitPointsCounterPage,
+    CharacterManagerPage
   ],
   imports: [
     IonicModule.forRoot(App)
@@ -23,7 +27,9 @@ import {SpellPage} from "../pages/spell/spell";
     App,
     ChaosMagePage,
     InitiativeTrackerPage,
-    SpellPage
+    SpellPage,
+    HitPointsCounterPage,
+    CharacterManagerPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

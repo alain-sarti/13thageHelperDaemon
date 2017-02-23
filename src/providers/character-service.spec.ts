@@ -23,6 +23,17 @@ describe("CharacterService", () => {
     });
   });
 
+  it("creates a character with the given values", () => {
+    let newChar = service.createCharacter("Name", "CM", 1, 10, 10);
+    expect(newChar.name).toEqual("Name");
+    expect(newChar.characterClass).toEqual("CM");
+    expect(newChar.level).toEqual(1);
+    expect(newChar.maxHitPoints).toEqual(10);
+    expect(newChar.hitDie).toEqual(10);
+    expect(newChar.failedDeathSaves).toEqual(0);
+    expect(newChar.recoveriesSpend).toEqual(0);
+  });
+
   describe("combat effects", () => {
     beforeEach(() => {
       character = fakeCharacter();

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, AlertController} from 'ionic-angular';
 import {CharacterService} from "../../providers/character-service";
+import {DataService} from "../../providers/data-service";
+import {Character} from "../../models/character-model";
 
 @Component({
   selector: 'page-hit-points-counter',
@@ -9,10 +11,14 @@ import {CharacterService} from "../../providers/character-service";
 export class HitPointsCounterPage {
   public static readonly HEAL:string = "heal";
   public static readonly DAMAGE:string = "damage";
+  public character: Character;
 
-  constructor(public characters: CharacterService, public alertController: AlertController) {}
+  constructor(public characters: CharacterService,
+              public alertController: AlertController,
+              public data: DataService) {}
 
   ionViewDidLoad() {
+
   }
 
   public takeDamage() {

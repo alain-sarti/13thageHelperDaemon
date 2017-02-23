@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Character Manager</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <form [formGroup]="characterForm">
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Character Class</ion-label>
+        <ion-input formControlName="characterClass" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Level</ion-label>
+        <ion-input formControlName="level" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Hit Points</ion-label>
+        <ion-input formControlName="hitPoints" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Hit Die</ion-label>
+        <ion-input formControlName="hitDie" type="number"></ion-input>
+      </ion-item>
+    </form>
+  </ion-list>
+</ion-content>
