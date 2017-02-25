@@ -1,13 +1,14 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 import "rxjs/add/operator/map";
 import PouchDB from "pouchdb";
+import {Character} from "../models/character-model";
 
 @Injectable()
 export class DataService {
   private db: any;
 
   constructor() {
-    this.db = new PouchDB("13thage_helper_daemon", { adapter: "websql" })
+    this.db = new PouchDB("13thage_helper_daemon", {adapter: "websql"})
   }
 
   public save(prop: string, value: any): void {
@@ -29,6 +30,16 @@ export class DataService {
       if (error.status != 404) {
         return error;
       }
+    });
+  }
+
+  public listCharacters(): Promise<Array<Character>> {
+    return this.db.allDocs({include_docs: true}).then((docs) => {
+      return docs.rows.map(row => {
+        if (row.doc._id.startsWith("CHAR_")) {
+          return row.doc.value;
+        }
+      });
     });
   }
 

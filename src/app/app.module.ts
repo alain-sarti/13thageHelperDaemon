@@ -9,6 +9,7 @@ import {DataService} from "../providers/data-service";
 import {SpellPage} from "../pages/spell/spell";
 import {HitPointsCounterPage} from "../pages/hit-points-counter/hit-points-counter";
 import {CharacterManagerPage} from "../pages/character-manager/character-manager";
+import {CharacterService} from "../providers/character-service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {CharacterManagerPage} from "../pages/character-manager/character-manager
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ChaosMageService,
     SpellService,
-    DataService
+    DataService,
+    CharacterService
   ]
 })
 export class AppModule {}

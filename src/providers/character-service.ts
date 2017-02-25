@@ -5,18 +5,23 @@ import {Character} from "../models/character-model";
 
 @Injectable()
 export class CharacterService {
+  public static readonly CHARACTER_PREFIX = "CHAR_";
 
   constructor(public data: DataService) {
   }
 
   public loadCharacter(name: string): Promise<Character> {
-    return this.data.load(name).then((data) => {
+    return this.data.load(CharacterService.CHARACTER_PREFIX + name).then((data) => {
       return data.value;
     });
   }
 
-  public saveCharacter(name: string, character: Character): void {
-    this.data.save(name, character);
+  public listCharacters(): Promise<Array<Character>> {
+    return this.data.listCharacters();
+  }
+
+  public saveCharacter(character: Character): void {
+    this.data.save(CharacterService.CHARACTER_PREFIX + character.name, character);
   }
 
   takeDamage(character: Character, damage: number): void {

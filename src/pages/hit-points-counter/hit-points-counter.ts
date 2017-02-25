@@ -49,7 +49,7 @@ export class HitPointsCounterPage {
           text: "Cancel"
         },
         {
-          // text: this.translate.instant("btn.save"),
+          // text: this.translate.instant("btn.saveCharacter"),
           text: "Save",
           handler: data => {
             //TODO: add characters
