@@ -10,6 +10,7 @@ import {SpellPage} from "../pages/spell/spell";
 import {HitPointsCounterPage} from "../pages/hit-points-counter/hit-points-counter";
 import {CharacterManagerPage} from "../pages/character-manager/character-manager";
 import {CharacterService} from "../providers/character-service";
+import {MessageService} from "../providers/message-service";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {CharacterService} from "../providers/character-service";
     ChaosMageService,
     SpellService,
     DataService,
-    CharacterService
+    CharacterService,
+    MessageService
   ]
 })
 export class AppModule {}

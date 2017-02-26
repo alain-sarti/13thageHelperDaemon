@@ -34,12 +34,14 @@ export class DataService {
   }
 
   public listCharacters(): Promise<Array<Character>> {
-    return this.db.allDocs({include_docs: true}).then((docs) => {
-      return docs.rows.map(row => {
+    return this.db.allDocs({include_docs: true}).then((rows) => {
+      return rows.rows.map((row) => {
         if (row.doc._id.startsWith("CHAR_")) {
-          return row.doc.value;
+          return row.doc.value
+        } else {
+          return null;
         }
-      });
+      }).filter(row => row);
     });
   }
 

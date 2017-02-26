@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {CharacterService} from "../../providers/character-service";
 import {AlertController} from "ionic-angular";
+import {Character} from "../../models/character-model";
+import {MessageService} from "../../providers/message-service";
 
 @Component({
   selector: "page-character-manager",
@@ -9,10 +11,12 @@ import {AlertController} from "ionic-angular";
 })
 export class CharacterManagerPage {
   public characterForm: FormGroup;
+  public character: Character;
 
   constructor(public formBuilder: FormBuilder,
               public characters: CharacterService,
-              public alertController: AlertController) {
+              public alertController: AlertController,
+              public messages: MessageService) {
     this.characterForm = formBuilder.group({
       name: ["", Validators.compose([Validators.maxLength(40), Validators.pattern("[a-zA-Z ]*"), Validators.required])],
       characterClass: ["CM", Validators.required],
@@ -34,31 +38,45 @@ export class CharacterManagerPage {
         form.hitPoints,
         form.hitDie);
       this.characters.saveCharacter(character);
+      this.messages.showToast("Character saved");
     } else {
       console.log("invalid");
     }
   }
 
   public loadCharacter() {
+    let alert = this.alertController.create();
+    alert.setTitle("Select Character");
     this.characters.listCharacters().then((characters) => {
-      console.log(characters);
+      characters.forEach((character) => {
+        alert.addInput({
+          type: "radio",
+          label: character.name,
+          value: character.name
+        });
+      });
+      alert.addButton("Cancel");
+      alert.addButton({
+        text: "OK",
+        handler: data => {
+          this.setCharacter(data);
+        }
+      });
+      alert.present();
     });
-    // let alert = this.alertController.create();
-    // alert.setTitle("");
-    //
-    // alert.addInput({
-    //   type: "radio",
-    //   label: "Blue",
-    //   value: "blue",
-    //   checked: true
-    // });
-    //
-    // alert.addButton("Cancel");
-    // alert.addButton({
-    //   text: "OK",
-    //   handler: data => {
-    //   }
-    // });
-    // alert.present();
+  }
+
+  public setCharacter(name: string) {
+    this.characters.loadCharacter(name).then((character) => {
+      this.character = character;
+      console.log(character);
+      this.characterForm.setValue({
+        name: character.name,
+        characterClass: character.characterClass,
+        level : character.level,
+        hitPoints : character.maxHitPoints,
+        hitDie : character.hitDie
+      })
+    });
   }
 }
