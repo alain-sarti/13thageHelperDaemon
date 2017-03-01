@@ -16,6 +16,7 @@ import { App, Config, Form, IonicModule, Keyboard, DomController, MenuController
 import { ConfigMock, PlatformMock } from "./mocks";
 import {Http, BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
+import {TranslateModule} from "ng2-translate";
 
 // Unfortunately there"s no typing for the `__karma__` variable. Just declare it as any.
 declare var __karma__: any;
@@ -70,6 +71,7 @@ export class TestUtils {
         FormsModule,
         IonicModule,
         ReactiveFormsModule,
+        TranslateModule.forRoot()
       ],
     });
   }

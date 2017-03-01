@@ -1,0 +1,25 @@
+{
+  "btn": {
+    "cancel": "Abbrechen",
+    "heal": "Heilen",
+    "loadCharacter": "Charakter Laden",
+    "ok": "Ok",
+    "save": "Speichern",
+    "takeDamage": "Schaden nehmen"
+  },
+  "character-manager": {
+    "saved": "Charakter wurde gespeichert!"
+  },
+  "hit-point-counter": {
+    "add": {
+      "message": "Schaden oder die Zahl an Erholungen angeben",
+      "title": "Schaden / Heilung"
+    },
+    "hitPoints": "Lebenspunkte",
+    "recoveries": "Erholungen",
+    "title": "Lebenspunkte Zähler"
+  },
+  "characters": {
+    "load": "Charakter Laden"
+  }
+}

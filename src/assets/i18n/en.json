@@ -1,0 +1,25 @@
+{
+  "btn": {
+    "cancel": "Cancel",
+    "heal": "Heal",
+    "loadCharacter": "load charakter",
+    "ok": "OK",
+    "save": "Save",
+    "takeDamage": "take damage"
+  },
+  "character-manager": {
+    "saved": "Character saved!"
+  },
+  "hit-points-counter": {
+    "add": {
+      "message": "Enter damage or amount of recoveries.",
+      "title": "damage / heal"
+    },
+    "hitPoints": "hit points",
+    "recoveries": "recoveries",
+    "title": "Hitpoint counter"
+  },
+  "characters": {
+    "load": "load character"
+  }
+}

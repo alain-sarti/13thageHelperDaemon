@@ -3,13 +3,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hit Points Counter</ion-title>
+    <ion-title>{{"hit-points-counter.title"|translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button (click)="takeDamage()">Take Damage</button>
-  <button ion-button (click)="heal()">Heal</button>
-  Hitpoints:
+  <div *ngIf="character">
+    {{"hit-points-counter.hitPoints"|translate}}: {{character.hitPoints}} / {{character.maxHitPoints}} <br>
+    {{"hit-points-counter.recoveries"|translate}}: {{character.recoveriesSpend}} / {{character.level}}
+  </div>
+  <button ion-button (click)="loadCharacter()">{{"btn.loadCharacter"|translate}}</button>
+  <button ion-button (click)="takeDamage()">{{"btn.takeDamage"|translate}}</button>
+  <button ion-button (click)="heal()">{{"btn.heal"|translate}}</button>
 </ion-content>

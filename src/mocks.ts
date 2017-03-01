@@ -148,4 +148,8 @@ export class HttpMock {
   }
 }
 
+export class TranslateServiceMock {
+
+}
+
 /* tslint:enable */

@@ -11,6 +11,12 @@ import {HitPointsCounterPage} from "../pages/hit-points-counter/hit-points-count
 import {CharacterManagerPage} from "../pages/character-manager/character-manager";
 import {CharacterService} from "../providers/character-service";
 import {MessageService} from "../providers/message-service";
+import {Http} from "@angular/http";
+import {TranslateLoader, TranslateModule, TranslateStaticLoader} from "ng2-translate";
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, "assets/i18n", ".json");
+}
 
 @NgModule({
   declarations: [
@@ -22,7 +28,12 @@ import {MessageService} from "../providers/message-service";
     CharacterManagerPage
   ],
   imports: [
-    IonicModule.forRoot(App)
+    IonicModule.forRoot(App),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

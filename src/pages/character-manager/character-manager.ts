@@ -4,6 +4,7 @@ import {CharacterService} from "../../providers/character-service";
 import {AlertController} from "ionic-angular";
 import {Character} from "../../models/character-model";
 import {MessageService} from "../../providers/message-service";
+import {TranslateService} from "ng2-translate";
 
 @Component({
   selector: "page-character-manager",
@@ -16,7 +17,8 @@ export class CharacterManagerPage {
   constructor(public formBuilder: FormBuilder,
               public characters: CharacterService,
               public alertController: AlertController,
-              public messages: MessageService) {
+              public messages: MessageService,
+              public translate: TranslateService) {
     this.characterForm = formBuilder.group({
       name: ["", Validators.compose([Validators.maxLength(40), Validators.pattern("[a-zA-Z ]*"), Validators.required])],
       characterClass: ["CM", Validators.required],
@@ -38,7 +40,7 @@ export class CharacterManagerPage {
         form.hitPoints,
         form.hitDie);
       this.characters.saveCharacter(character);
-      this.messages.showToast("Character saved");
+      this.messages.showToast(this.translate.instant("character-manager.saved"));
     } else {
       console.log("invalid");
     }
@@ -55,9 +57,9 @@ export class CharacterManagerPage {
           value: character.name
         });
       });
-      alert.addButton("Cancel");
+      alert.addButton(this.translate.instant("btn.cancel"));
       alert.addButton({
-        text: "OK",
+        text: this.translate.instant("btn.ok"),
         handler: data => {
           this.setCharacter(data);
         }
