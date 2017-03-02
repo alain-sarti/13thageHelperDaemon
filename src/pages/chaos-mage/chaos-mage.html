@@ -3,12 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>CM</ion-title>
+    <ion-title>{{"chaos-mage.title"|translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="nextSpellType()">Get next spelltype</button> <br/>
+  <button ion-button (click)="nextSpellType()">{{"chaos-mage.next"|translate}}</button> <br/>
   {{type}}<br/>
   {{warpEffect}}<br/>
   <ion-list>

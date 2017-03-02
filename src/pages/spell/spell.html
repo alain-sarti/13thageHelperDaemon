@@ -1,18 +1,18 @@
 <h1>{{spell.name}}</h1>
 <div>{{spell.range}}</div>
 <div>{{spell.type}}</div>
-<div *ngIf="spell.special"><b>Special:</b> <span [innerHTML]="spell.special"></span></div>
-<div *ngIf="spell.target"><b>Target:</b> {{spell.target}}</div>
-<div *ngIf="spell.attack"><b>Attack:</b> {{spell.attack}}</div>
-<div *ngIf="spell.hit"><b>Hit:</b> <span [innerHTML]="spell.hit"></span></div>
-<div *ngIf="spell.evenHit"><b>Natural Even Hit:</b> {{spell.evenHit}}</div>
-<div *ngIf="spell.oddHit"><b>Natural Odd Hit:</b> {{spell.oddHit}}</div>
-<div *ngIf="spell.damage"><b>Damage:</b> <span [innerHTML]="spell.damage"></span></div>
-<div *ngIf="spell.miss"><b>Miss:</b> {{spell.miss}}</div>
-<div *ngIf="spell.evenMiss"><b>Natural Even Miss:</b> {{spell.evenMiss}}</div>
-<div *ngIf="spell.oddMiss"><b>Natural Odd Miss:</b> {{spell.oddMiss}}</div>
-<div *ngIf="spell.effect"><b>Effect: </b> <span [innerHTML]="spell.effect"></span></div>
-<div *ngIf="spell.adventurerFeat"><b>Adventurer Feat:</b> {{spell.adventurerFeat}}</div>
-<div *ngIf="spell.championFeat"><b>Champion Feat:</b> {{spell.championFeat}}</div>
-<div *ngIf="spell.epicFeat"><b>Epic Feat:</b> {{spell.epicFeat}}</div>
+<div *ngIf="spell.special"><b>{{"spell.special"|translate}}:</b> <span [innerHTML]="spell.special"></span></div>
+<div *ngIf="spell.target"><b>{{"spell.target"|translate}}:</b> {{spell.target}}</div>
+<div *ngIf="spell.attack"><b>{{"spell.attack"|translate}}:</b> {{spell.attack}}</div>
+<div *ngIf="spell.hit"><b>{{"spell.hit"|translate}}:</b> <span [innerHTML]="spell.hit"></span></div>
+<div *ngIf="spell.evenHit"><b>{{"spell.natural-even-hit"|translate}}:</b> {{spell.evenHit}}</div>
+<div *ngIf="spell.oddHit"><b>{{"spell.natural-odd-hit"|translate}}:</b> {{spell.oddHit}}</div>
+<div *ngIf="spell.damage"><b>{{"spell.damage"|translate}}:</b> <span [innerHTML]="spell.damage"></span></div>
+<div *ngIf="spell.miss"><b>{{"spell.miss"|translate}}:</b> {{spell.miss}}</div>
+<div *ngIf="spell.evenMiss"><b>{{"spell.natural-even-hit"|translate}}:</b> {{spell.evenMiss}}</div>
+<div *ngIf="spell.oddMiss"><b>{{"spell.natural-even-miss"|translate}}:</b> {{spell.oddMiss}}</div>
+<div *ngIf="spell.effect"><b>{{"spell.effect"|translate}}: </b> <span [innerHTML]="spell.effect"></span></div>
+<div *ngIf="spell.adventurerFeat"><b>{{"spell.adventurer-feat"|translate}}:</b> {{spell.adventurerFeat}}</div>
+<div *ngIf="spell.championFeat"><b>{{"spell.champion-feat"|translate}}:</b> {{spell.championFeat}}</div>
+<div *ngIf="spell.epicFeat"><b>{{"spell.epic-feat"|translate}}:</b> {{spell.epicFeat}}</div>
 

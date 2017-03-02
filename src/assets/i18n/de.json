@@ -4,11 +4,24 @@
     "heal": "Heilen",
     "loadCharacter": "Charakter Laden",
     "ok": "Ok",
+    "reset": "Zurücksetzen",
     "save": "Speichern",
     "takeDamage": "Schaden nehmen"
   },
+  "chaos-mage": {
+    "next": "Nächster Zaubertyp",
+    "title": "CZ"
+  },
   "character-manager": {
+    "character-class": "Charakter Klasse",
+    "hit-die": "Lebenspunkte Würfel",
+    "hit-points": "Lebenspunkte",
+    "level": "Level",
+    "name": "Name",
     "saved": "Charakter wurde gespeichert!"
+  },
+  "characters": {
+    "load": "Charakter Laden"
   },
   "hit-point-counter": {
     "add": {
@@ -19,7 +32,33 @@
     "recoveries": "Erholungen",
     "title": "Lebenspunkte Zähler"
   },
-  "characters": {
-    "load": "Charakter Laden"
+  "initiative-tracker": {
+    "add": {
+      "message": "Initiativewert und gegebenenfalls Spielernamen eintragen.",
+      "ph-player": "Spielername",
+      "ph-slot": "Ini Wert",
+      "title": "Ini Wert hinzufügen"
+    },
+    "btn": {
+      "add-master": "Meister Ini hinzufügen",
+      "add-player": "Spielen Ini hinzufügen"
+    },
+    "title": "Ini"
+  },
+  "spell": {
+    "adventurer-feat": "Adventurer Feat",
+    "attack": "Attack",
+    "champion-feat": "Champion Feat",
+    "damage": "Damage",
+    "effect": "Effect",
+    "epic-feat": "Epic Feat",
+    "hit": "Hit",
+    "miss": "Miss",
+    "special": "Special",
+    "target": "Target",
+    "natural-even-hit": "Natural Even Hit",
+    "natural-even-miss": "Natural Even Miss",
+    "natural-odd-hit": "Natural Odd Hit",
+    "natural-odd-miss": "Natural Odd Miss"
   }
 }

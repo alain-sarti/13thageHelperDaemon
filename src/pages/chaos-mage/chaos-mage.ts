@@ -10,6 +10,7 @@ import {Spell} from "../../models/spell-model";
 export class ChaosMagePage {
   public type: string;
   public spells: Array<Spell> = [];
+  public levels: Array<number> = [];
   public warpEffect: string;
 
   constructor(public service: ChaosMageService) {}
@@ -36,8 +37,6 @@ export class ChaosMagePage {
         this.warpEffect = this.service.rollWarpEffect(type.type);
         break;
     }
-    //TODO: Add grouping to list
     this.spells = this.service.showSpells(type.type);
   }
-
 }

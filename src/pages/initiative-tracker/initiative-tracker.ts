@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import {AlertController} from "ionic-angular";
 import {DataService} from "../../providers/data-service";
+import {TranslateService} from "ng2-translate";
 
 @Component({
   selector: "page-initiative-tracker",
@@ -13,7 +14,9 @@ export class InitiativeTrackerPage {
 
   public segments: Array<{type: string, slot: number, player: string}> = [];
 
-  constructor(public alertController: AlertController, public data: DataService) {
+  constructor(public alertController: AlertController,
+              public data: DataService,
+              public translate: TranslateService) {
     this.data.load(this.DB_KEY).then((data) => {
       this.segments = data.value;
     }).catch((error) => {
@@ -28,32 +31,26 @@ export class InitiativeTrackerPage {
 
   public showDialog(type: string) {
     let prompt = this.alertController.create({
-      // title: this.translate.instant("it.add.title"),
-      // message: this.translate.instant("it.add.message"),
-      title: "Test",
-      message: "Message",
+      title: this.translate.instant("initiative-tracker.add.title"),
+      message: this.translate.instant("initiative-tracker.add.message"),
       inputs: [
         {
           type: "number",
           name: "slot",
-          // placeholder: this.translate.instant("it.add.placeholder")
-          placeholder: "slot"
+          placeholder: this.translate.instant("initiative-tracker.add.ph-slot")
         },
         {
           type: "String",
           name: "player",
-          // placeholder: this.translate.instant("it.add.placeholder")
-          placeholder: "player"
+          placeholder: this.translate.instant("initiative-tracker.add.ph-player")
         }
       ],
       buttons: [
         {
-          // text: this.translate.instant("btn.cancel")
-          text: "Cancel"
+          text: this.translate.instant("btn.cancel")
         },
         {
-          // text: this.translate.instant("btn.saveCharacter"),
-          text: "Save",
+          text: this.translate.instant("btn.save"),
           handler: data => {
             this.addSlot(type, data.slot, data.player);
           }
