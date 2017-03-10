@@ -18,7 +18,8 @@
     "hit-points": "Hit Points",
     "level": "Level",
     "name": "Name",
-    "saved": "Character saved!"
+    "saved": "Character saved!",
+    "title": "Character Manager"
   },
   "characters": {
     "load": "load character"

@@ -18,7 +18,8 @@
     "hit-points": "Lebenspunkte",
     "level": "Level",
     "name": "Name",
-    "saved": "Charakter wurde gespeichert!"
+    "saved": "Charakter wurde gespeichert!",
+    "title": "Charakter Manager"
   },
   "characters": {
     "load": "Charakter Laden"
