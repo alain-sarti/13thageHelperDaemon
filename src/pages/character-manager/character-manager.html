@@ -1,42 +1,42 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{"character-manager.title"|translate}}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"character-manager.title"|translate}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list no-lines>
-    <form [formGroup]="characterForm">
-      <ion-item>
-        <ion-label floating>{{"character-manager.name"|translate}}</ion-label>
-        <ion-input formControlName="name" type="text"></ion-input>
-      </ion-item>
+    <ion-list no-lines>
+        <form [formGroup]="characterForm">
+            <ion-item>
+                <ion-label floating>{{"character-manager.name"|translate}}</ion-label>
+                <ion-input formControlName="name" type="text"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label floating>{{"character-manager.character-class"|translate}}</ion-label>
-        <ion-input formControlName="characterClass" type="text"></ion-input>
-      </ion-item>
+            <ion-item>
+                <ion-label floating>{{"character-manager.character-class"|translate}}</ion-label>
+                <ion-input formControlName="characterClass" type="text"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label floating>{{"character-manager.level"|translate}}</ion-label>
-        <ion-input formControlName="level" type="number"></ion-input>
-      </ion-item>
+            <ion-item>
+                <ion-label floating>{{"character-manager.level"|translate}}</ion-label>
+                <ion-input formControlName="level" type="number"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label floating>{{"character-manager.hit-points"|translate}}</ion-label>
-        <ion-input formControlName="hitPoints" type="number"></ion-input>
-      </ion-item>
+            <ion-item>
+                <ion-label floating>{{"character-manager.hit-points"|translate}}</ion-label>
+                <ion-input formControlName="hitPoints" type="number"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label floating>{{"character-manager.hit-die"|translate}}</ion-label>
-        <ion-input formControlName="hitDie" type="number"></ion-input>
-      </ion-item>
-    </form>
-  </ion-list>
-  <button ion-button (click)="saveCharacter()">{{"btn.save"|translate}}</button>
-  <button ion-button (click)="loadCharacter()">{{"btn.load"|translate}}</button>
+            <ion-item>
+                <ion-label floating>{{"character-manager.hit-die"|translate}}</ion-label>
+                <ion-input formControlName="hitDie" type="number"></ion-input>
+            </ion-item>
+        </form>
+    </ion-list>
+    <button ion-button (click)="saveCharacter()">{{"btn.save"|translate}}</button>
+    <button ion-button (click)="loadCharacter()">{{"btn.load"|translate}}</button>
 </ion-content>

@@ -1,65 +1,65 @@
 {
-  "btn": {
-    "cancel": "Cancel",
-    "heal": "Heal",
-    "loadCharacter": "load charakter",
-    "ok": "OK",
-    "reset": "Reset",
-    "save": "Save",
-    "takeDamage": "take damage"
-  },
-  "chaos-mage": {
-    "next": "Get Next Spelltype",
-    "title": "CM"
-  },
-  "character-manager": {
-    "character-class": "Character Class",
-    "hit-die": "Hit Die",
-    "hit-points": "Hit Points",
-    "level": "Level",
-    "name": "Name",
-    "saved": "Character saved!",
-    "title": "Character Manager"
-  },
-  "characters": {
-    "load": "load character"
-  },
-  "hit-points-counter": {
-    "add": {
-      "message": "Enter damage or amount of recoveries.",
-      "title": "damage / heal"
-    },
-    "hitPoints": "hit points",
-    "recoveries": "recoveries",
-    "title": "Hitpoint counter"
-  },
-  "initiative-tracker": {
-    "add": {
-      "message": "Fill in the Initiative value and the player if needed.",
-      "ph-player": "Player name",
-      "ph-slot": "ini slot",
-      "title": "Add Ini slot"
-    },
     "btn": {
-      "add-master": "Add Master Slot",
-      "add-player": "Add Player Slot"
+        "cancel": "Cancel",
+        "heal": "Heal",
+        "loadCharacter": "load charakter",
+        "ok": "OK",
+        "reset": "Reset",
+        "save": "Save",
+        "takeDamage": "take damage"
     },
-    "title": "Ini"
-  },
-  "spell": {
-    "adventurer-feat": "Adventurer Feat",
-    "attack": "Attack",
-    "champion-feat": "Champion Feat",
-    "damage": "Damage",
-    "effect": "Effect",
-    "epic-feat": "Epic Feat",
-    "hit": "Hit",
-    "miss": "Miss",
-    "special": "Special",
-    "target": "Target",
-    "natural-even-hit": "Natural Even Hit",
-    "natural-even-miss": "Natural Even Miss",
-    "natural-odd-hit": "Natural Odd Hit",
-    "natural-odd-miss": "Natural Odd Miss"
-  }
+    "chaos-mage": {
+        "next": "Get Next Spelltype",
+        "title": "CM"
+    },
+    "character-manager": {
+        "character-class": "Character Class",
+        "hit-die": "Hit Die",
+        "hit-points": "Hit Points",
+        "level": "Level",
+        "name": "Name",
+        "saved": "Character saved!",
+        "title": "Character Manager"
+    },
+    "characters": {
+        "load": "load character"
+    },
+    "hit-points-counter": {
+        "add": {
+            "message": "Enter damage or amount of recoveries.",
+            "title": "damage / heal"
+        },
+        "hitPoints": "hit points",
+        "recoveries": "recoveries",
+        "title": "Hitpoint counter"
+    },
+    "initiative-tracker": {
+        "add": {
+            "message": "Fill in the Initiative value and the player if needed.",
+            "ph-player": "Player name",
+            "ph-slot": "ini slot",
+            "title": "Add Ini slot"
+        },
+        "btn": {
+            "add-master": "Add Master Slot",
+            "add-player": "Add Player Slot"
+        },
+        "title": "Ini"
+    },
+    "spell": {
+        "adventurer-feat": "Adventurer Feat",
+        "attack": "Attack",
+        "champion-feat": "Champion Feat",
+        "damage": "Damage",
+        "effect": "Effect",
+        "epic-feat": "Epic Feat",
+        "hit": "Hit",
+        "miss": "Miss",
+        "special": "Special",
+        "target": "Target",
+        "natural-even-hit": "Natural Even Hit",
+        "natural-even-miss": "Natural Even Miss",
+        "natural-odd-hit": "Natural Odd Hit",
+        "natural-odd-miss": "Natural Odd Miss"
+    }
 }

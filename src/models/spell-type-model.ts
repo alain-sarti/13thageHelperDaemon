@@ -1,10 +1,10 @@
 export interface SpellType {
-  type: Type,
-  warp: boolean
+    type: Type,
+    warp: boolean
 }
 
 export enum Type {
-  CMAttack,
-  CMDefense,
-  CMIconic
+    CMAttack,
+    CMDefense,
+    CMIconic
 }

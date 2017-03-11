@@ -5,17 +5,17 @@ import {AlertController, ToastController} from "ionic-angular";
 @Injectable()
 export class MessageService {
 
-  constructor(public alertController: AlertController, public toastController: ToastController) {
-  }
+    constructor(public alertController: AlertController, public toastController: ToastController) {
+    }
 
-  public showToast(message: string): void {
-    let toast = this.toastController.create({
-      // message: this.translate.instant(message),
-      message: message,
-      duration: 3000,
-      position: 'top'
-    });
+    public showToast(message: string): void {
+        let toast = this.toastController.create({
+            // message: this.translate.instant(message),
+            message: message,
+            duration: 3000,
+            position: 'top'
+        });
 
-    toast.present();
-  }
+        toast.present();
+    }
 }

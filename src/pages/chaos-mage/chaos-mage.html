@@ -1,19 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{"chaos-mage.title"|translate}}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"chaos-mage.title"|translate}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="nextSpellType()">{{"chaos-mage.next"|translate}}</button> <br/>
-  {{type}}<br/>
-  {{warpEffect}}<br/>
-  <ion-list>
-    <ion-item *ngFor="let spell of spells" text-wrap>
-      <page-spell [spell]="spell"></page-spell>
-    </ion-item>
-  </ion-list>
+    <button ion-button (click)="nextSpellType()">{{"chaos-mage.next"|translate}}</button>
+    <br/>
+    {{type}}<br/>
+    {{warpEffect}}<br/>
+    <ion-list>
+        <ion-item *ngFor="let spell of spells" text-wrap>
+            <page-spell [spell]="spell"></page-spell>
+        </ion-item>
+    </ion-list>
 </ion-content>

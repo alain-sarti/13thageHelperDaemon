@@ -1,19 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{"initiative-tracker.title"|translate}}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"initiative-tracker.title"|translate}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="showDialog(PLAYERS)">{{"initiative-tracker.btn.add-player"|translate}}</button>
-  <button ion-button (click)="showDialog(MASTER)">{{"initiative-tracker.btn.add-master"|translate}}</button>
-  <ion-list>
-    <ion-item *ngFor="let segment of segments">
-      {{segment.slot}} <ion-icon name="{{icon(segment.type)}}"></ion-icon> {{segment.player}}
-    </ion-item>
-  </ion-list>
-  <button ion-button (click)="reset()">{{"btn.reset"|translate}}</button>
+    <button ion-button (click)="showDialog(PLAYERS)">{{"initiative-tracker.btn.add-player"|translate}}</button>
+    <button ion-button (click)="showDialog(MASTER)">{{"initiative-tracker.btn.add-master"|translate}}</button>
+    <ion-list>
+        <ion-item *ngFor="let segment of segments">
+            {{segment.slot}}
+            <ion-icon name="{{icon(segment.type)}}"></ion-icon>
+            {{segment.player}}
+        </ion-item>
+    </ion-list>
+    <button ion-button (click)="reset()">{{"btn.reset"|translate}}</button>
 </ion-content>

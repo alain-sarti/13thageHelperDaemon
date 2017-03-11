@@ -1,12 +1,12 @@
-import { browser, element, by } from "protractor";
+import {browser, element, by} from "protractor";
 
 describe("MyApp", () => {
 
-  beforeEach(() => {
-    browser.get("");
-  });
+    beforeEach(() => {
+        browser.get("");
+    });
 
-  it("should have a title", () => {
-    expect(browser.getTitle()).toEqual("CM");
-  });
+    it("should have a title", () => {
+        expect(browser.getTitle()).toEqual("CM");
+    });
 });
