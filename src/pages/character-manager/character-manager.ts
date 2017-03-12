@@ -20,7 +20,7 @@ export class CharacterManagerPage {
                 public messages: MessageService,
                 public translate: TranslateService) {
         this.characterForm = formBuilder.group({
-            name: ["", Validators.compose([Validators.maxLength(40), Validators.pattern("[a-zA-Z ]*"), Validators.required])],
+            name: ["", Validators.compose([Validators.maxLength(40), Validators.pattern("[a-zA-Z0-9 ]*"), Validators.required])],
             characterClass: ["CM", Validators.required],
             level: [1, Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])],
             hitPoints: ["", Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])],
@@ -40,8 +40,9 @@ export class CharacterManagerPage {
                 form.hitPoints,
                 form.hitDie);
             this.characters.saveCharacter(character);
-            this.messages.showToast(this.translate.instant("character-manager.saved"));
+            this.messages.showToast("character-manager.saved");
         } else {
+            this.messages.showError("character-manager.not-saved");
             console.log("invalid");
         }
     }

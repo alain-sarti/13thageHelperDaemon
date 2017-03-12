@@ -2,6 +2,7 @@
     "btn": {
         "cancel": "Abbrechen",
         "heal": "Heilen",
+        "load": "Laden",
         "loadCharacter": "Charakter Laden",
         "ok": "Ok",
         "reset": "Zurücksetzen",
@@ -17,6 +18,7 @@
         "hit-die": "Lebenspunkte Würfel",
         "hit-points": "Lebenspunkte",
         "level": "Level",
+        "not-saved": "Ihre Eingaben sind inkorrekt, bitte prüfen!",
         "name": "Name",
         "saved": "Charakter wurde gespeichert!",
         "title": "Charakter Manager"

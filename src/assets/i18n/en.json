@@ -2,6 +2,7 @@
     "btn": {
         "cancel": "Cancel",
         "heal": "Heal",
+        "load": "Load",
         "loadCharacter": "load charakter",
         "ok": "OK",
         "reset": "Reset",
@@ -18,6 +19,7 @@
         "hit-points": "Hit Points",
         "level": "Level",
         "name": "Name",
+        "not-saved": "Your entries are not valid, please check again!",
         "saved": "Character saved!",
         "title": "Character Manager"
     },
