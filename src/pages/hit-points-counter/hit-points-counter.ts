@@ -13,11 +13,21 @@ export class HitPointsCounterPage {
     public static readonly HEAL: string = "heal";
     public static readonly DAMAGE: string = "damage";
     public character: Character;
+    readonly DB_KEY = "hit-points-counter";
 
     constructor(public characters: CharacterService,
                 public alertController: AlertController,
                 public data: DataService,
                 public translate: TranslateService) {
+        this.data.load(this.DB_KEY).then((data) => {
+            if(data.value) {
+                this.character = data.value;
+            }
+        }).catch((error) => {
+            if (error.status != 404) {
+                console.log("it load data: " + error);
+            }
+        });
     }
 
     ionViewDidLoad() {
@@ -57,10 +67,12 @@ export class HitPointsCounterPage {
 
     public takeDamage() {
         this.showDialog(HitPointsCounterPage.DAMAGE);
+        this.data.save(this.DB_KEY, this.character);
     }
 
     public heal() {
         this.showDialog(HitPointsCounterPage.HEAL);
+        this.data.save(this.DB_KEY, this.character);
     }
 
     public showDialog(type: string) {
@@ -91,6 +103,11 @@ export class HitPointsCounterPage {
             ]
         });
         prompt.present();
+    }
+
+    public fullHealUp() {
+        this.characters.fullHealUp(this.character);
+        this.data.save(this.DB_KEY, this.character);
     }
 
 }

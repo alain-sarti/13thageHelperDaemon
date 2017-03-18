@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {ChaosMageService} from "../../providers/chaos-mage-service";
-import {Type} from "../../models/spell-type-model";
+import {Type, SpellType} from "../../models/spell-type-model";
 import {Spell} from "../../models/spell-model";
+import {DataService} from "../../providers/data-service";
 
 @Component({
     selector: 'page-chaos-mage',
@@ -10,10 +11,19 @@ import {Spell} from "../../models/spell-model";
 export class ChaosMagePage {
     public type: string;
     public spells: Array<Spell> = [];
-    public levels: Array<number> = [];
     public warpEffect: string;
+    readonly DB_KEY = "chaos-mage";
 
-    constructor(public service: ChaosMageService) {
+    constructor(public service: ChaosMageService, public data: DataService) {
+        this.data.load(this.DB_KEY).then((data) => {
+            if(data.value) {
+                this.showInfoForType(data.value);
+            }
+        }).catch((error) => {
+            if (error.status != 404) {
+                console.log("it load data: " + error);
+            }
+        });
     }
 
     ionViewDidLoad() {
@@ -21,6 +31,11 @@ export class ChaosMagePage {
 
     public nextSpellType() {
         let type = this.service.nextSpellType();
+        this.showInfoForType(type);
+        this.data.save(this.DB_KEY, type);
+    }
+
+    public showInfoForType(type: SpellType) {
         switch (type.type) {
             case Type.CMAttack:
                 this.type = "Attack";
@@ -39,5 +54,12 @@ export class ChaosMagePage {
                 break;
         }
         this.spells = this.service.showSpells(type.type);
+    }
+
+    public reset() {
+        this.type = "";
+        this.spells = [];
+        this.warpEffect = "";
+        this.data.save(this.DB_KEY, null);
     }
 }

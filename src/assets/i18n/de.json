@@ -1,6 +1,7 @@
 {
     "btn": {
         "cancel": "Abbrechen",
+        "fullHealUp": "Vollständige Heilung",
         "heal": "Heilen",
         "load": "Laden",
         "loadCharacter": "Charakter Laden",
@@ -11,6 +12,7 @@
     },
     "chaos-mage": {
         "next": "Nächster Zaubertyp",
+        "reset": "Zurücksetzen",
         "title": "CZ"
     },
     "character-manager": {

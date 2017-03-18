@@ -23,7 +23,7 @@ export class InitiativeTrackerPage {
             if (error.status != 404) {
                 console.log("it load data: " + error);
             }
-        })
+        });
     }
 
     ionViewDidLoad() {

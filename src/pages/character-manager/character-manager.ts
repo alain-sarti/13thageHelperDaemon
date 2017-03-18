@@ -24,7 +24,8 @@ export class CharacterManagerPage {
             characterClass: ["CM", Validators.required],
             level: [1, Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])],
             hitPoints: ["", Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])],
-            hitDie: ["", Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])]
+            hitDie: ["", Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])],
+            recoveries: ["", Validators.compose([Validators.pattern("^([1-9]|[1-9][0-9])$"), Validators.required])]
         });
     }
 
@@ -38,7 +39,8 @@ export class CharacterManagerPage {
                 form.characterClass,
                 form.level,
                 form.hitPoints,
-                form.hitDie);
+                form.hitDie,
+                form.recoveries);
             this.characters.saveCharacter(character);
             this.messages.showToast("character-manager.saved");
         } else {
@@ -78,7 +80,8 @@ export class CharacterManagerPage {
                 characterClass: character.characterClass,
                 level: character.level,
                 hitPoints: character.maxHitPoints,
-                hitDie: character.hitDie
+                hitDie: character.hitDie,
+                recoveries: character.recoveries
             })
         });
     }

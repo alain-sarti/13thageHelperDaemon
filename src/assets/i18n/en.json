@@ -1,6 +1,7 @@
 {
     "btn": {
         "cancel": "Cancel",
+        "fullHealUp": "Full Heal-up",
         "heal": "Heal",
         "load": "Load",
         "loadCharacter": "load charakter",
@@ -11,6 +12,7 @@
     },
     "chaos-mage": {
         "next": "Get Next Spelltype",
+        "reset": "Reset",
         "title": "CM"
     },
     "character-manager": {

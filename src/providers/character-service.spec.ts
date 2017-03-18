@@ -23,7 +23,7 @@ describe("CharacterService", () => {
     });
 
     it("creates a character with the given values", () => {
-        let newChar = service.createCharacter("Name", "CM", 1, 10, 10);
+        let newChar = service.createCharacter("Name", "CM", 1, 10, 10, 1);
         expect(newChar.name).toEqual("Name");
         expect(newChar.characterClass).toEqual("CM");
         expect(newChar.level).toEqual(1);
@@ -132,6 +132,13 @@ describe("CharacterService", () => {
             service.recovery(character, 2);
             expect(character.hitPoints).toEqual(character.maxHitPoints);
             expect(character.recoveriesSpend).toEqual(1);
+        });
+
+        it("resets a character if the fully heal up", () => {
+            service.takeDamage(character, 5);
+            service.fullHealUp(character);
+            expect(character.hitPoints).toEqual(character.maxHitPoints);
+            expect(character.recoveriesSpend).toEqual(0);
         });
     });
 });

@@ -11,6 +11,7 @@ export interface Character {
     hitDie: number,
     failedDeathSaves: number,
     recoveriesSpend: number,
+    recoveries: number,
     hitPoints?: number,
     temporaryHitPoints?: number
 }

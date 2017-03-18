@@ -7,6 +7,7 @@ describe("CharacterManagerPage", () => {
     let levelInput = element.all(by.className("text-input")).get(2);
     let hitPointsInput = element.all(by.className("text-input")).get(3);
     let hitDieInput = element.all(by.className("text-input")).get(4);
+    let recoveriesInput = element.all(by.className("text-input")).get(5);
     let saveBtn = element(by.buttonText("Save"));
     let loadBtn = element(by.buttonText("Load"));
 
@@ -30,6 +31,8 @@ describe("CharacterManagerPage", () => {
         hitPointsInput.sendKeys("6");
         hitDieInput.clear();
         hitDieInput.sendKeys("6");
+        recoveriesInput.clear();
+        recoveriesInput.sendKeys("6");
 
         saveBtn.click();
         expect(element(by.tagName("ion-toast")).isPresent()).toBeTruthy();
@@ -48,26 +51,30 @@ describe("CharacterManagerPage", () => {
         expect(element(by.css(".alert-radio-label")).getText()).not.toEqual("NOT VALID");
     });
 
-    it("should not allow text in level, hit points and hit die input", () => {
+    it("should not allow text in level, hit points, recoveries and hit die input", () => {
         levelInput.clear();
         levelInput.sendKeys("ab");
         hitPointsInput.clear();
         hitPointsInput.sendKeys("ab");
         hitDieInput.clear();
         hitDieInput.sendKeys("ab");
+        recoveriesInput.clear();
+        recoveriesInput.sendKeys("ab");
 
         expect(levelInput.getAttribute("value")).toEqual("");
         expect(hitDieInput.getAttribute("value")).toEqual("");
         expect(hitPointsInput.getAttribute("value")).toEqual("");
     });
 
-    it("should not allow numbers > 99 in level, hit points and hit die input", () => {
+    it("should not allow numbers > 99 in level, hit points, recoveries and hit die input", () => {
         levelInput.clear();
         levelInput.sendKeys("100");
         hitPointsInput.clear();
         hitPointsInput.sendKeys("101");
         hitDieInput.clear();
         hitDieInput.sendKeys("102");
+        recoveriesInput.clear();
+        recoveriesInput.sendKeys("103");
 
         saveBtn.click();
         expect(element(by.css(".error")).isPresent()).toBeTruthy();

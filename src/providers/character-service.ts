@@ -50,7 +50,7 @@ export class CharacterService {
         if (character.recoveriesSpend == null) {
             character.recoveriesSpend = 0;
         }
-        if (character.recoveriesSpend + amount <= character.level) {
+        if (character.recoveriesSpend + amount <= character.recoveries) {
             character.recoveriesSpend += amount;
             for (let x = 1; x <= amount; x++) {
                 this.heal(character, Math.floor(Math.random() * character.hitDie) + 1);
@@ -71,11 +71,17 @@ export class CharacterService {
         }
     }
 
+    fullHealUp(character: Character): void {
+        character.hitPoints = character.maxHitPoints;
+        character.recoveriesSpend = 0;
+    }
+
     createCharacter(name: string,
                     characterClass: string,
                     level: number,
                     hitPoints: number,
-                    hitDie: number): Character {
+                    hitDie: number,
+                    recoveries: number): Character {
         return <Character>{
             name: name,
             characterClass: characterClass,
@@ -84,6 +90,7 @@ export class CharacterService {
             hitDie: hitDie,
             talents: [],
             feats: [],
+            recoveries: recoveries,
             failedDeathSaves: 0,
             recoveriesSpend: 0
         }
