@@ -22,6 +22,7 @@
         "level": "Level",
         "not-saved": "Ihre Eingaben sind inkorrekt, bitte prüfen!",
         "name": "Name",
+        "recoveries": "Erholungen",
         "saved": "Charakter wurde gespeichert!",
         "title": "Charakter Manager"
     },

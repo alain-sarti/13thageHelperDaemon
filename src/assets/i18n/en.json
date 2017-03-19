@@ -21,6 +21,7 @@
         "hit-points": "Hit Points",
         "level": "Level",
         "name": "Name",
+        "recoveries": "Recoveries",
         "not-saved": "Your entries are not valid, please check again!",
         "saved": "Character saved!",
         "title": "Character Manager"

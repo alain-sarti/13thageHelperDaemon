@@ -35,6 +35,11 @@
                 <ion-label floating>{{"character-manager.hit-die"|translate}}</ion-label>
                 <ion-input formControlName="hitDie" type="number"></ion-input>
             </ion-item>
+
+            <ion-item>
+                <ion-label floating>{{"character-manager.recoveries"|translate}}</ion-label>
+                <ion-input formControlName="recoveries" type="number"></ion-input>
+            </ion-item>
         </form>
     </ion-list>
     <button ion-button (click)="saveCharacter()">{{"btn.save"|translate}}</button>

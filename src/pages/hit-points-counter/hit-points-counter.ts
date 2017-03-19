@@ -67,12 +67,10 @@ export class HitPointsCounterPage {
 
     public takeDamage() {
         this.showDialog(HitPointsCounterPage.DAMAGE);
-        this.data.save(this.DB_KEY, this.character);
     }
 
     public heal() {
         this.showDialog(HitPointsCounterPage.HEAL);
-        this.data.save(this.DB_KEY, this.character);
     }
 
     public showDialog(type: string) {
@@ -98,6 +96,7 @@ export class HitPointsCounterPage {
                             this.characters.takeDamage(this.character, data.amount);
                         }
                         this.characters.saveCharacter(this.character);
+                        this.data.save(this.DB_KEY, this.character);
                     }
                 }
             ]

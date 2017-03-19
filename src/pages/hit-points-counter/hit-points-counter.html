@@ -10,8 +10,8 @@
 
 <ion-content padding>
     <div *ngIf="character">
-        {{"hit-points-counter.hitPoints"|translate}}: {{character.hitPoints}} / {{character.maxHitPoints}} <br>
-        {{"hit-points-counter.recoveries"|translate}}: {{character.recoveriesSpend}} / {{character.recoveries}}
+        <span id="hitPoints">{{"hit-points-counter.hitPoints"|translate}}: {{character.hitPoints}} / {{character.maxHitPoints}} </span><br>
+        <span id="recoveries">{{"hit-points-counter.recoveries"|translate}}: {{character.recoveriesSpend}} / {{character.recoveries}}</span>
     </div>
     <button ion-button (click)="loadCharacter()">{{"btn.loadCharacter"|translate}}</button>
     <button ion-button (click)="takeDamage()">{{"btn.takeDamage"|translate}}</button>
