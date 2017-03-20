@@ -14,6 +14,7 @@ describe("HitPointsCounterPage", () => {
 
     it("should load a character and display it's current health", () => {
         loadCharacterBtn.click();
+        browser.driver.sleep(400);
         element(by.buttonText("TEST")).click();
         element(by.buttonText("OK")).click();
         expect(element(by.id("hitPoints")).getText()).toEqual("hit points: 6 / 6");
