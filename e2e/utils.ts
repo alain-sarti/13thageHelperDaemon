@@ -18,6 +18,10 @@ export function openCharacterManagerPage(): Promise<any> {
     return openPage(3);
 }
 
+export function waitForAlert(): void {
+    browser.driver.sleep(400);
+}
+
 function openPage(index: number): Promise<any> {
     return element(by.css(".bar-button-menutoggle")).click().then(() => {
         browser.driver.sleep(500); // wait for the animation
