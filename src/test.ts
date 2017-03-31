@@ -27,6 +27,7 @@ import {ConfigMock, PlatformMock} from "./mocks";
 import {Http, BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
 import {TranslateModule} from "ng2-translate";
+import {DataService} from "./providers/data-service";
 
 // Unfortunately there"s no typing for the `__karma__` variable. Just declare it as any.
 declare var __karma__: any;
@@ -73,8 +74,8 @@ export class TestUtils {
                 {provide: Config, useClass: ConfigMock},
                 {
                     provide: Http, useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
-                    return new Http(backend, defaultOptions);
-                }
+                        return new Http(backend, defaultOptions);
+                    }
                 }
             ],
             imports: [

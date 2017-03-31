@@ -4,6 +4,8 @@ import {SpellService} from "./providers/spell-service";
 import {fakeCMSpells} from "./providers/spell-service.spec";
 import {Request, RequestOptionsArgs, Response} from "@angular/http";
 import {Observable} from "rxjs";
+import {Alert, AlertController, AlertOptions, Toast, ToastController, ToastOptions} from "ionic-angular";
+import {TranslateService} from "ng2-translate";
 
 export class SpellServiceMock extends SpellService {
     public initialiseCMSpells() {
@@ -162,8 +164,37 @@ export class HttpMock {
     }
 }
 
-export class TranslateServiceMock {
+export class TranslateServiceMock extends TranslateService {
+    constructor() {
+        super(null, null, null);
+    }
 
+}
+
+export class ToastMock {
+    present(): Promise<any> {
+        return Promise.resolve();
+    }
+}
+
+export class AlertControllerMock extends AlertController {
+    constructor() {
+        super((<any>new ConfigMock()));
+    }
+
+    create(opts?: AlertOptions): Alert {
+        return new Alert(null);
+    }
+}
+
+export class ToastControllerMock extends ToastController {
+    constructor() {
+        super((<any>new ConfigMock()));
+    }
+
+    create(opts?: ToastOptions): Toast {
+        return (<any>new ToastMock());
+    }
 }
 
 /* tslint:enable */
