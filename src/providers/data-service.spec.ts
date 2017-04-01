@@ -1,22 +1,17 @@
 import {DataService} from "./data-service";
-import {async, ComponentFixture} from "@angular/core/testing";
-import {TestUtils} from "../test";
 
-let fixture: ComponentFixture<DataService> = null;
-let instance: any = null;
+let service: DataService = null;
 
-xdescribe("DataService", () => {
-    beforeEach(async(() => TestUtils.beforeEachCompiler([DataService]).then(compiled => {
-        fixture = compiled.fixture;
-        instance = compiled.instance;
-        fixture.detectChanges();
-    })));
-
-    afterEach(() => {
-        fixture.destroy();
+describe("DataService", () => {
+    beforeEach(() => {
+        service = new DataService(true);
     });
 
     it("initializes", () => {
-        expect(instance).toBeTruthy();
+        expect(service).toBeTruthy();
+    });
+
+    it("saves data", () => {
+
     });
 });
