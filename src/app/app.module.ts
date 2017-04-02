@@ -48,7 +48,11 @@ export function createTranslateLoader(http: Http) {
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         ChaosMageService,
         SpellService,
-        DataService,
+        {
+            provide: DataService, useFactory: () => {
+                return new DataService(false)
+            }
+        },
         CharacterService,
         MessageService
     ]

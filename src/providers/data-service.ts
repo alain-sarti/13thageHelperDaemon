@@ -10,8 +10,10 @@ export class DataService {
 
     constructor(inMemoryOnly: boolean = false) {
         if (inMemoryOnly) {
+            console.log("memory DB");
             this.db = new PouchDBMemory("13thage_helper_daemon")
         } else {
+            console.log("normal DB");
             this.db = new PouchDB("13thage_helper_daemon", {adapter: "websql"})
         }
     }
@@ -50,8 +52,8 @@ export class DataService {
         });
     }
 
-    private putPref(key: string, value: any, _rev: any): void {
-        this.db.put({
+    private putPref(key: string, value: any, _rev: any): Promise<any> {
+        return this.db.put({
             _id: key,
             _rev: _rev,
             value: value
