@@ -6,6 +6,7 @@ import {Request, RequestOptionsArgs, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import {Alert, AlertController, AlertOptions, Toast, ToastController, ToastOptions} from "ionic-angular";
 import {TranslateService} from "ng2-translate";
+import {DataService} from "./providers/data-service";
 
 export class SpellServiceMock extends SpellService {
     public initialiseCMSpells() {
@@ -13,20 +14,9 @@ export class SpellServiceMock extends SpellService {
     }
 }
 
-export class DataServiceMock {
-    private value: any = null;
-
-    constructor(value: any) {
-        this.value = value;
-    }
-
-    public load(prop: string): Promise<any> {
-        return new Promise((resolve, reject) => {
-            resolve({prop: prop, value: this.value});
-        });
-    }
-
-    public save(prop: string, value: any): void {
+export class DataServiceMock extends DataService {
+    constructor() {
+        super(true);
     }
 }
 

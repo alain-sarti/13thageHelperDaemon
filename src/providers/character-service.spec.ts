@@ -8,7 +8,7 @@ let character: Character = null;
 
 describe("CharacterService", () => {
     beforeEach(() => {
-        service = new CharacterService((<any> new DataServiceMock(fakeCharacter())));
+        service = new CharacterService(new DataServiceMock());
     });
 
     it("initialises", () => {
@@ -16,10 +16,13 @@ describe("CharacterService", () => {
     });
 
     it("loads a saved character", (done) => {
-        service.loadCharacter("test").then((character) => {
-            expect(character.name).toEqual("fake Character");
-            done();
-        });
+        service.saveCharacter(fakeCharacter());
+        setTimeout(() => {
+            service.loadCharacter("fake Character").then((character) => {
+                expect(character.name).toEqual("fake Character");
+                done();
+            });
+        }, 500);
     });
 
     it("creates a character with the given values", () => {
@@ -143,7 +146,7 @@ describe("CharacterService", () => {
     });
 });
 
-function fakeCharacter(): Character {
+export function fakeCharacter(): Character {
     return <Character>{
         name: "fake Character",
         characterClass: "CM",

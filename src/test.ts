@@ -23,7 +23,7 @@ import {
     NavController,
     Platform
 } from "ionic-angular";
-import {ConfigMock, PlatformMock} from "./mocks";
+import {ConfigMock, DataServiceMock, PlatformMock} from "./mocks";
 import {Http, BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
 import {TranslateModule} from "ng2-translate";
@@ -76,7 +76,8 @@ export class TestUtils {
                     provide: Http, useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
                         return new Http(backend, defaultOptions);
                     }
-                }
+                },
+                {provide: DataService, useClass: DataServiceMock}
             ],
             imports: [
                 FormsModule,
